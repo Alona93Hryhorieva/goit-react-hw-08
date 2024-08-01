@@ -20,8 +20,10 @@ export const addContact = createAsyncThunk(
   async (contact, thunkAPI) => {
     try {
       const responce = await axios.post("/contacts", contact);
+      toast.success("The contact was successfully added!");
       return responce.data;
     } catch (error) {
+      toast.error("Failed to add contact. Please try again!");
       return thunkAPI.rejectWithValue(error.message);
     }
   }
@@ -32,8 +34,24 @@ export const deleteContact = createAsyncThunk(
   async (contactId, thunkAPI) => {
     try {
       const responce = await axios.delete(`/contacts/${contactId}`);
+      toast.success("The contact was successfully deleted!");
       return responce.data;
     } catch (error) {
+      toast.error("Failed to delete contact. Please try again!");
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
+export const editingContact = createAsyncThunk(
+  "contacts/editingContact",
+  async ({ contactId, updatedData }, thunkAPI) => {
+    try {
+      const response = await axios.patch(`/contacts/${contactId}`, updatedData);
+      toast.success("The contact was successfully changed!");
+      return response.data;
+    } catch (error) {
+      toast.error("Failed to change contact. Please try again!");
       return thunkAPI.rejectWithValue(error.message);
     }
   }
