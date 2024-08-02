@@ -3,8 +3,8 @@ import { useEffect } from "react";
 import ContactForm from "../../components/ContactForm/ContactForm";
 import ContactList from "../../components/ContactList/ContactList";
 import SearchBox from "../../components/SearchBox/SearchBox";
-import { ErrorMessage } from "../../components/ErrorMessage/ErrorMessage";
-import { Loader } from "../../components/Loader/Loader";
+import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
+import Loader from "../../components/Loader/Loader";
 import ModalDeleteContact from "../../components/ModalDeleteContact/ModalDeleteContact";
 import {
   selectLoading,
