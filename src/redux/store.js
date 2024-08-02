@@ -11,8 +11,8 @@ import {
   REGISTER,
 } from "redux-persist";
 import { authReducer } from "./auth/slice";
-import { contactsReducer } from "./contacts/slice.js";
-import { filtersReducer } from "./filters/slice.js";
+import { contactsReducer } from "./contacts/slice";
+import { filtersReducer } from "./filters/slice";
 
 const authPersistConfig = {
   key: "auth",

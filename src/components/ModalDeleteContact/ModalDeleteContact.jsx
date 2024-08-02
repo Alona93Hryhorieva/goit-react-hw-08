@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { RxCross2 } from "react-icons/rx";
 import toast from "react-hot-toast";
-import { closeModal } from "../../redux/contacts/slice.js";
+import { closeModal } from "../../redux/contacts/slice";
 import { deleteContact } from "../../redux/contacts/operations";
 import css from "./ModalDeleteContact.module.css";
 

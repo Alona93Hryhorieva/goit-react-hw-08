@@ -3,7 +3,7 @@ import { setFilterNumber, setFilterName } from "../../redux/filters/slice";
 import {
   selectFilterName,
   selectFilterNumber,
-} from "../../redux/filters/slice";
+} from "../../redux/filters/selectors";
 
 import css from "../SearchBox/SearchBox.module.css";
 
