@@ -11,8 +11,8 @@ import {
   REGISTER,
 } from "redux-persist";
 import { authReducer } from "./auth/slice";
-import { contactsReducer } from "./contacts/slice";
-import { filterReducer } from "./filters/slice";
+import { contactsReducer } from "./contacts/slice.js";
+import { filtersReducer } from "./filters/slice.js";
 
 const authPersistConfig = {
   key: "auth",
@@ -24,7 +24,7 @@ export const store = configureStore({
   reducer: {
     auth: persistReducer(authPersistConfig, authReducer),
     contacts: contactsReducer, // contactsReducer тепер містить і modalReducer
-    filters: filterReducer,
+    filters: filtersReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

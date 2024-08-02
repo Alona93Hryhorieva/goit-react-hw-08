@@ -1,13 +1,3 @@
-.form {
-  width: 320px;
-}
-
-.label {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 16px;
-}
-
 .containerForm {
   display: flex;
   flex-direction: column;
@@ -21,7 +11,7 @@
   font-size: 2rem; /* Зменшено розмір шрифту */
   line-height: 1.5;
   font-weight: 300;
-  color: #242424; /* Золотистий колір для заголовка */
+  color: #242424;
   margin-bottom: 20px; /* Відступ від заголовка до форми */
   text-align: center; /* Вирівнювання по центру */
 }

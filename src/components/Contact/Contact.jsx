@@ -1,12 +1,20 @@
 import { FaPhoneAlt } from "react-icons/fa";
 import { FaUser } from "react-icons/fa";
 import { useDispatch } from "react-redux";
-import { deleteContact } from "../../redux/contacts/contactsOps";
+import { openModal } from "../../redux/contacts/slice.js";
+import { setSelectedContact } from "../../redux/contacts/slice";
 import css from "./Contact.module.css";
 
 export default function Contact({ contactFrend: { id, name, number } }) {
   const dispatch = useDispatch();
-  const handleDelete = () => dispatch(deleteContact(id));
+
+  const handleOpenModal = () => {
+    dispatch(openModal(id));
+  };
+
+  const handleChange = () => {
+    dispatch(setSelectedContact(contactFrend));
+  };
 
   return (
     <>
@@ -19,9 +27,14 @@ export default function Contact({ contactFrend: { id, name, number } }) {
           {number}
         </p>
       </div>
-      <button type="button" onClick={handleDelete}>
-        Delete
-      </button>
+      <div className={css.Btn}>
+        <button className={css.btn} type="button" onClick={handleOpenModal}>
+          Delete
+        </button>
+        <button className={css.btn} type="button" onClick={handleChange}>
+          Change
+        </button>
+      </div>
     </>
   );
 }

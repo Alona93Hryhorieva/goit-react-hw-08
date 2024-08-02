@@ -1,0 +1,65 @@
+.link {
+  display: inline-block;
+  text-decoration: none;
+  padding: 12px;
+  font-weight: 700;
+  color: #2a363b;
+}
+
+.link.active {
+  color: #e84a5f;
+}
+
+.nav {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center; /* Центрування по вертикалі */
+  gap: 20px; /* Зменшено відступ між пунктами меню */
+  padding: 10px 20px; /* Додано відступи навколо навігаційної панелі */
+  background-color: #282c34; /* Темний фон для навігаційної панелі */
+  border-radius: 8px; /* Округлені кути */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Тінь для ефекту підняття */
+}
+
+.link {
+  display: flex;
+  align-items: center; /* Центрування іконок та тексту по вертикалі */
+  font-size: 1.125rem; /* Зменшено розмір шрифту для більшого комфорту */
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.87); /* Колір тексту */
+  transition: color 0.3s ease; /* Плавний перехід для кольору */
+}
+
+.link:hover {
+  color: #61dafb; /* Колір при наведенні курсору */
+}
+
+.isActive {
+  text-decoration: underline;
+  color: #61dafb; /* Колір для активного посилання */
+}
+
+.nav span {
+  margin-right: 8px; /* Відступ між іконкою та текстом */
+  display: flex;
+  align-items: center;
+}
+
+@media (prefers-color-scheme: light) {
+  .nav {
+    background-color: #ffffff; /* Світлий фон для навігаційної панелі */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Легка тінь для світлої теми */
+  }
+
+  .link {
+    color: #333; /* Темний колір тексту для світлої теми */
+  }
+
+  .link:hover {
+    color: #007aff; /* Колір при наведенні курсору у світлій темі */
+  }
+
+  .isActive {
+    color: #007aff; /* Колір для активного посилання у світлій темі */
+  }
+}

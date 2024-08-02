@@ -1,14 +1,14 @@
 import { Field, Formik, Form, ErrorMessage } from "formik";
-import { nanoid } from "nanoid";
 import * as yup from "yup";
 import { useDispatch } from "react-redux";
+import { useId } from "react";
 import css from "./ContactForm.module.css";
-import { addContact } from "../../redux/contacts/contactsOps";
+import { addContact } from "../../redux/contacts/operations";
 
 export default function ContactForm() {
-  const nameFrendId = nanoid();
-  const numberFrendId = nanoid();
   const dispatch = useDispatch();
+  const nameId = useId();
+  const numberId = useId();
 
   const initialValues = {
     name: "",
@@ -39,31 +39,48 @@ export default function ContactForm() {
         number: values.number,
       })
     );
+    toast.success("Successfully created!");
   };
 
   return (
-    <Formik
-      initialValues={initialValues}
-      onSubmit={handleSubmit}
-      validationSchema={validationSchema}
-    >
-      <Form className={css.container}>
-        <label htmlFor={nameFrendId}>Name</label>
-        <Field type="text" name="name" className={css.input} id={nameFrendId} />
-        <ErrorMessage name="name" component="div" className={css.error} />
-
-        <label htmlFor={numberFrendId}>Number</label>
-        <Field
-          type="tel"
-          name="number"
-          className={css.input}
-          id={numberFrendId}
-        />
-        <ErrorMessage name="number" component="div" className={css.error} />
-        <button type="submit" className={css.button}>
-          Add contact
-        </button>
-      </Form>
-    </Formik>
+    <>
+      <Formik
+        initialValues={initialValues}
+        validationSchema={validationSchema}
+        onSubmit={handleSubmit}
+      >
+        <Form className={css.container}>
+          <label htmlFor={nameId}>
+            Name:
+            <Field
+              type="text"
+              name="name"
+              id={nameId}
+              className={css.input}
+              placeholder="Tony Stark"
+            ></Field>
+            <ErrorMessage name="name" component="span" className={css.error} />
+          </label>
+          <label htmlFor={numberId}>
+            Number:
+            <Field
+              type="tel"
+              name="number"
+              id={numberId}
+              className={css.input}
+              placeholder="0999421705"
+            ></Field>
+            <ErrorMessage
+              name="number"
+              component="span"
+              className={css.error}
+            />
+          </label>
+          <button type="submit" className={css.button}>
+            Add contact
+          </button>
+        </Form>
+      </Formik>
+    </>
   );
 }

@@ -3,3 +3,9 @@
   font-size: 18px;
   color: rgb(89, 86, 138);
 }
+.containerBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
