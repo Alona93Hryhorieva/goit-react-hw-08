@@ -1,8 +1,7 @@
 import { FaPhoneAlt } from "react-icons/fa";
 import { FaUser } from "react-icons/fa";
 import { useDispatch } from "react-redux";
-import { openModal } from "../../redux/contacts/slice";
-import { setSelectedContact } from "../../redux/contacts/slice";
+import { openModal, setSelectedContact } from "../../redux/contacts/slice";
 import css from "./Contact.module.css";
 
 export default function Contact({ contactFrend: { id, name, number } }) {
