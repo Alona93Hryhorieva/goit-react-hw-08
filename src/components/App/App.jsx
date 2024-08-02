@@ -1,21 +1,22 @@
-import { lazy, Suspense, useEffect } from "react";
-import { Route, Routes } from "react-router-dom";
+import "./App.module.css";
 import { useDispatch, useSelector } from "react-redux";
-import { Toaster } from "react-hot-toast";
-import Layout from "../Layout/Layout";
-import { refreshUser } from "../../redux/auth/operations";
+import { useEffect, lazy, Suspense } from "react";
+import { Routes, Route } from "react-router-dom";
 import { selectIsRefreshing } from "../../redux/auth/selectors";
+import { refreshUser } from "../../redux/auth/operations";
+import { Toaster } from "react-hot-toast";
+import Layout from "../../components/Layout/Layout";
 import RestrictedRoute from "../RestrictedRoute/RestrictedRoute";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 const ContactsPage = lazy(
   () => import("../../pages/ContactsPage/ContactsPage")
 );
+const HomePage = lazy(() => import("../../pages/HomePage/HomePage"));
+const LoginPage = lazy(() => import("../../pages/LoginPage/LoginPage"));
 const RegistrationPage = lazy(
   () => import("../../pages/RegistrationPage/RegistrationPage")
 );
-const LoginPage = lazy(() => import("../../pages/LoginPage/LoginPage"));
-const HomePage = lazy(() => import("../../pages/HomePage/HomePage"));
 
 export default function App() {
   const dispatch = useDispatch();
@@ -26,18 +27,19 @@ export default function App() {
   }, [dispatch]);
 
   return isRefreshing ? (
-    <div>Refreshing user please wait...</div>
+    <p>Refreshing user please wait..</p>
   ) : (
     <Layout>
       <Suspense fallback={null}>
+        <Toaster position="top-center" reverseOrder={false} />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route
             path="/register"
             element={
               <RestrictedRoute
-                component={<RegistrationPage />}
                 redirectTo="/contacts"
+                component={<RegistrationPage />}
               />
             }
           />
@@ -45,15 +47,15 @@ export default function App() {
             path="/login"
             element={
               <RestrictedRoute
-                component={<LoginPage />}
                 redirectTo="/contacts"
+                component={<LoginPage />}
               />
             }
           />
           <Route
             path="/contacts"
             element={
-              <PrivateRoute component={<ContactsPage />} redirectTo="/login" />
+              <PrivateRoute redirectTo="/login" component={<ContactsPage />} />
             }
           />
         </Routes>
