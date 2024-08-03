@@ -11,7 +11,7 @@ export default function Contact({ contact }) {
     dispatch(openModal(contact.id));
   };
 
-  const handleChange = () => {
+  const handleEditing = () => {
     dispatch(setSelectedContact(contact));
   };
 
@@ -19,19 +19,19 @@ export default function Contact({ contact }) {
     <>
       <div>
         <p className={css.text}>
-          <FaPhoneAlt /> {contact.name}
+          <FaUser />
+          {contact.name}
         </p>
         <p className={css.text}>
-          <FaUser />
-          {contact.number}
+          <FaPhoneAlt /> {contact.number}
         </p>
       </div>
       <div className={css.containerBtn}>
         <button type="button" onClick={handleOpenModal}>
           Delete
         </button>
-        <button type="button" onClick={handleChange}>
-          Change
+        <button type="button" onClick={handleEditing}>
+          Editing
         </button>
       </div>
     </>

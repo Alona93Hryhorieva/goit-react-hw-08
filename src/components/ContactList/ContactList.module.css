@@ -3,18 +3,19 @@
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
+  justify-content: center;
 }
 .item {
   box-sizing: border-box;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  max-width: 350px;
-  border: 1px solid rgb(163, 80, 80);
-  border-radius: 5px;
-  padding: 7px;
+  border: 4px solid rgb(163, 80, 80);
+  border-radius: 10px;
+  padding: 15px;
+  list-style: none;
+  height: auto;
+  background-color: #20502c;
 }
 .error {
-  color: red;
-  font-size: 16px;
+  color: rgb(209, 108, 108);
+  font-size: 30px;
+  font-weight: 700;
 }

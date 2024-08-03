@@ -1,11 +1,11 @@
 .text {
-  margin: 5px 15px 5px 5px;
+  margin: 5px 15px 5px 15px;
   font-size: 18px;
-  color: rgb(89, 86, 138);
+  color: rgb(230, 222, 222);
 }
 .containerBtn {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 10px;
 }
