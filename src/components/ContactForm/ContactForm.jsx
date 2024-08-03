@@ -32,7 +32,6 @@ export default function ContactForm() {
   });
 
   const handleSubmit = (values, action) => {
-    // event.preventDefault();
     action.resetForm();
     dispatch(
       addContact({
@@ -44,44 +43,44 @@ export default function ContactForm() {
   };
 
   return (
-    <>
+    <div className={css.container}>
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
         onSubmit={handleSubmit}
       >
-        <Form className={css.container}>
-          <label htmlFor={nameId}>
+        <Form className={css.form}>
+          <label htmlFor={nameId} className={css.label}>
             Name:
             <Field
               type="text"
               name="name"
               id={nameId}
               className={css.input}
-              placeholder="Tony Stark"
-            ></Field>
+              placeholder="Tom Hardy"
+            />
             <ErrorMessage name="name" component="span" className={css.error} />
           </label>
-          <label htmlFor={numberId}>
+          <label htmlFor={numberId} className={css.label}>
             Number:
             <Field
               type="tel"
               name="number"
               id={numberId}
               className={css.input}
-              placeholder="0999421705"
-            ></Field>
+              placeholder="1234567890"
+            />
             <ErrorMessage
               name="number"
               component="span"
               className={css.error}
             />
           </label>
-          <button type="submit" className={css.button}>
-            Add contact
-          </button>
+          <div className={css.containerBtn}>
+            <button type="submit">Add contact</button>
+          </div>
         </Form>
       </Formik>
-    </>
+    </div>
   );
 }

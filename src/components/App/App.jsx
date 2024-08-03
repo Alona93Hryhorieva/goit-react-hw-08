@@ -8,6 +8,7 @@ import { Toaster } from "react-hot-toast";
 import Layout from "../../components/Layout/Layout";
 import RestrictedRoute from "../RestrictedRoute/RestrictedRoute";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import { css } from "@emotion/react";
 
 const ContactsPage = lazy(
   () => import("../../pages/ContactsPage/ContactsPage")
@@ -27,7 +28,7 @@ export default function App() {
   }, [dispatch]);
 
   return isRefreshing ? (
-    <p>Refreshing user please wait..</p>
+    <p className={css.title}>Refreshing user please wait..</p>
   ) : (
     <Layout>
       <Suspense fallback={null}>

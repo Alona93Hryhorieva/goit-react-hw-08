@@ -27,10 +27,12 @@ export default function ContactsPage() {
   return (
     <>
       {modal.state && <ModalDeleteContact />}
-      <div className={css.div}>
-        <h1 className={css.title}>Phone book</h1>
-        <ContactForm />
-        <SearchBox />
+      <div className={css.containerList}>
+        <h2 className={css.title}>Phone book</h2>
+        <div className={css.container}>
+          <ContactForm />
+          <SearchBox />
+        </div>
         {error && <ErrorMessage />}
         {loading && <Loader />}
         {!error && !loading && <ContactList />}

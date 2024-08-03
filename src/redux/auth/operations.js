@@ -83,7 +83,7 @@ export const refreshUser = createAsyncThunk(
     setAuthHeader(reduxState.auth.token);
 
     try {
-      const response = await axios.get("/users/me");
+      const response = await axios.get("/users/current");
       return response.data;
     } catch (error) {
       toast.error("Failed to login! Try again.");

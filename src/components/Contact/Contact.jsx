@@ -26,11 +26,11 @@ export default function Contact({ contactFrend: { id, name, number } }) {
           {number}
         </p>
       </div>
-      <div className={css.Btn}>
-        <button className={css.btn} type="button" onClick={handleOpenModal}>
+      <div className={css.containerBtn}>
+        <button type="button" onClick={handleOpenModal}>
           Delete
         </button>
-        <button className={css.btn} type="button" onClick={handleChange}>
+        <button type="button" onClick={handleChange}>
           Change
         </button>
       </div>

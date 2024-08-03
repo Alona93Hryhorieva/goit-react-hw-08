@@ -1,9 +1,13 @@
-.wrapper {
+.container {
   display: flex;
   align-items: center;
   gap: 12px;
 }
 
-.username {
+.userName {
   font-weight: 700;
+  text-decoration: none;
+  /* padding: 12px; */
+  font-size: 30px;
+  color: #36b1e6;
 }

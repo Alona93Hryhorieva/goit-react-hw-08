@@ -1,7 +1,7 @@
 .header {
   border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 0 20px 0 20px;
+  box-shadow: 0 4px 10px rgba(7, 39, 8, 0.2);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -12,6 +12,6 @@
 }
 
 .header:hover {
-  background-color: #131b10;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  background-color: #20550c;
+  box-shadow: 0 8px 20px rgba(190, 44, 44, 0.3);
 }

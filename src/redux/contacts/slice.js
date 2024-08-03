@@ -40,15 +40,15 @@ const contactsSlice = createSlice({
   initialState,
   reducers: {
     setSelectedContact: (state, action) => {
-      state.selectedContact = action.payload;
+      state.contacts.selectedContact = action.payload;
     },
     openModal: (state, action) => {
-      state.modal.state = true;
-      state.modal.contactId = action.payload;
+      state.contacts.modal.state = true;
+      state.contacts.modal.contactId = action.payload;
     },
     closeModal: (state) => {
-      state.modal.state = false;
-      state.modal.contactId = null;
+      state.contacts.modal.state = false;
+      state.contacts.modal.contactId = null;
     },
   },
 

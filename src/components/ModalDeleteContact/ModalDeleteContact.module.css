@@ -34,7 +34,7 @@
   margin-bottom: 20px;
   color: #333;
 }
-
+/* 
 .button {
   padding: 12px 20px;
   background-color: #28a745;
@@ -51,7 +51,7 @@
 .button:hover {
   background-color: #218838;
   transform: scale(1.05);
-}
+} */
 
 .backdrop {
   position: fixed;

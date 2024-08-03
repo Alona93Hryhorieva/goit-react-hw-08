@@ -25,12 +25,8 @@ export default function ModalDeleteContact() {
           <RxCross2 />
         </button>
         <h2 className={css.title}>Are you sure about that?</h2>
-        <Button className={css.btn} onClick={handleClose}>
-          Cancel
-        </Button>
-        <Button className={css.btn} onClick={handleConfirm}>
-          Delete
-        </Button>
+        <Button onClick={handleClose}>Cancel</Button>
+        <Button onClick={handleConfirm}>Delete</Button>
       </div>
     </>
   );

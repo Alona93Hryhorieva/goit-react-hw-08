@@ -1,10 +1,19 @@
-.div {
-  max-width: 800px;
+.containerList {
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  margin-top: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 100px;
   margin: 0 auto;
   padding: 20px;
-  background-color: #f9f9f9;
   border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .title {
@@ -12,4 +21,7 @@
   font-size: 32px;
   margin-bottom: 20px;
   color: #333;
+  font-size: 50px;
+  color: rgb(22, 153, 153);
+  font-weight: 900;
 }

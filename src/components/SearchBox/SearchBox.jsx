@@ -27,8 +27,8 @@ export default function SearchBox() {
         value={filterName}
         onChange={handleChangeName}
         placeholder="Enter name..."
+        className={css.input}
       />
-      <br />
       <label className={css.label}>Find contacts by number</label>
       <input
         name="filter-number"
@@ -36,6 +36,7 @@ export default function SearchBox() {
         value={filterNumber}
         onChange={handleChangeNumber}
         placeholder="Enter number..."
+        className={css.input}
       />
     </div>
   );

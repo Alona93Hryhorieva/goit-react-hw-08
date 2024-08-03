@@ -1,26 +1,77 @@
 .container {
-  padding: 10px;
-  margin: 10px;
+  align-items: center;
+  justify-content: center;
   display: flex;
   flex-direction: column;
   gap: 15px;
-  max-width: 300px;
-  border: 1px solid #96363b;
-  border-radius: 5px;
-}
-.input {
-  max-width: 300px;
-  border: 1px solid cadetblue;
-  margin-left: 5px;
-}
-.input:focus {
-  border-color: blue !important;
+  margin-bottom: 16px;
 }
 
-.button {
-  max-width: 150px;
-  margin: 0 auto;
+.title {
+  font-size: 50px;
+  font-weight: 700;
+  color: #242424;
+  text-align: center;
 }
+.form {
+  width: 400px;
+  height: auto;
+  background-color: rgb(118, 148, 93);
+  border: 4px solid rgba(102, 21, 21, 0.87);
+  border-radius: 20px;
+  padding: 15px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.5;
+  font-weight: 700;
+  margin-bottom: 5px;
+  margin-left: 8px;
+}
+
+.input {
+  width: 100%;
+  font-size: 20px;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.87);
+  margin-bottom: 15px;
+}
+
+.input:focus {
+  border-color: #c92951;
+  outline: none;
+}
+
 .error {
-  color: red;
+  color: #ff4d4d;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1.5;
+}
+.containerBtn {
+  display: flex;
+  justify-content: center;
+}
+.btn {
+  margin-top: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: rgb(17, 17, 17);
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.87);
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease;
+  color: 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #107e0c;
+  border-color: #c92951;
+  color: rgb(240, 248, 240);
 }

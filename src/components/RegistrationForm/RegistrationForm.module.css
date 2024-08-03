@@ -1,136 +1,76 @@
-.form {
-  width: 320px;
-}
-
-.label {
+.container {
+  align-items: center;
+  justify-content: center;
   display: flex;
   flex-direction: column;
+  gap: 15px;
   margin-bottom: 16px;
 }
 
-.containerForm {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #1e1e1e; /* Темний фон для контейнера */
-  padding: 30px;
-  border-radius: 10px; /* Узгоджене округлення */
-}
-
 .title {
-  font-size: 2rem; /* Зменшено розмір шрифту */
-  line-height: 1.5;
-  font-weight: 300;
-  color: #242424; /* Золотистий колір для заголовка */
-  margin-bottom: 20px; /* Відступ від заголовка до форми */
-  text-align: center; /* Вирівнювання по центру */
+  font-size: 50px;
+  font-weight: 700;
+  color: #242424;
+  text-align: center;
 }
-
 .form {
-  border: 1px solid rgba(255, 255, 255, 0.2); /* Легкий контур */
-  border-radius: 10px; /* Узгоджене округлення */
-  max-width: 600px; /* Узгоджена максимальна ширина */
-  padding: 30px;
-  background-color: #282c34; /* Темний фон форми */
-  color: rgba(255, 255, 255, 0.87); /* Світлий текст */
+  width: 400px;
+  background-color: rgb(118, 148, 93);
+  border: 4px solid rgba(102, 21, 21, 0.87);
+  border-radius: 20px;
+  padding: 15px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
 }
 
 .label {
-  line-height: 1.5;
-  color: rgba(255, 255, 255, 0.7); /* Світло-сірий колір для тексту */
-  font-weight: 500;
-  margin-bottom: 8px; /* Узгоджено з відступами */
-}
-
-.container {
   display: flex;
   flex-direction: column;
-  gap: 12px; /* Узгоджено відступи */
-  margin-bottom: 16px; /* Узгоджено відступи між полями та кнопкою */
+  line-height: 1.5;
+  font-weight: 700;
+  margin-bottom: 5px;
+  margin-left: 8px;
 }
 
 .input {
-  width: 100%; /* Зроблено ширину адаптивною */
+  width: 100%;
+  font-size: 20px;
   padding: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.3); /* Легкий контур */
-  border-radius: 8px; /* Узгоджене округлення */
-  background-color: #333; /* Темний фон полів */
-  color: rgba(255, 255, 255, 0.87); /* Світлий текст */
-  font-size: 1em;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.87);
+  margin-bottom: 15px;
 }
 
 .input:focus {
-  border-color: #007aff; /* Колір контуру при фокусі */
-  outline: none; /* Вимкнено стандартний обведення */
+  border-color: #c92951;
+  outline: none;
 }
 
 .error {
-  color: #ff4d4d; /* Червоний колір для помилок */
-  font-size: 0.875rem; /* Зменшено розмір шрифту для помилок */
+  color: #ff4d4d;
+  font-size: 20px;
+  font-weight: bold;
   line-height: 1.5;
 }
-
 .containerBtn {
   display: flex;
   justify-content: center;
-  align-items: center;
-  margin-top: 20px; /* Узгоджено відступи */
 }
-
 .btn {
-  background-color: #444; /* Темний фон кнопок */
-  color: #fff; /* Світлий текст на кнопках */
-  border: 1px solid #555; /* Темний контур кнопок */
-  border-radius: 8px; /* Узгоджене округлення */
-  padding: 12px 20px;
-  font-size: 1em;
-  font-weight: 500;
+  margin-top: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: rgb(17, 17, 17);
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.87);
   cursor: pointer;
   transition:
     background-color 0.3s ease,
     border-color 0.3s ease;
+  color: 0.3s ease;
 }
 
 .btn:hover {
-  background-color: #555; /* Зміна фону кнопки при наведенні */
-  border-color: #666; /* Зміна кольору контуру при наведенні */
-}
-
-@media (prefers-color-scheme: light) {
-  .containerForm {
-    background-color: #ffffff; /* Світлий фон для контейнери */
-  }
-
-  .form {
-    border: 1px solid rgba(0, 0, 0, 0.1); /* Легкий контур */
-    background-color: #f9f9f9; /* Світлий фон форми */
-  }
-
-  .label {
-    color: rgba(0, 0, 0, 0.7); /* Темний колір для тексту */
-  }
-
-  .input {
-    background-color: #fff; /* Світлий фон полів для світлої теми */
-    border: 1px solid #ccc; /* Легкий контур полів для світлої теми */
-    color: #000; /* Темний текст у полях */
-  }
-
-  .input:focus {
-    border-color: #007aff; /* Синій колір контуру при фокусі */
-  }
-
-  .error {
-    color: #e74c3c; /* Червоний колір для помилок в світлій темі */
-  }
-
-  .btn {
-    background-color: #007aff; /* Синій фон кнопок для світлої теми */
-    border-color: #0061a8; /* Темніший синій для контуру */
-  }
-
-  .btn:hover {
-    background-color: #0061a8; /* Темніший синій при наведенні */
-    border-color: #004b87; /* Ще темніший синій для контуру при наведенні */
-  }
+  background-color: #107e0c;
+  border-color: #c92951;
+  color: rgb(240, 248, 240);
 }
