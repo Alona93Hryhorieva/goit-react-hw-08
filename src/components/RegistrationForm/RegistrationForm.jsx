@@ -121,7 +121,7 @@ export default function RegistrationForm() {
 
   const dispatch = useDispatch();
   const handleSubmit = (values, actions) => {
-    console.log("Form values:", values); // Логування значень форми перед відправленням
+    // console.log("Form values:", values); // Логування значень форми перед відправленням
     dispatch(register(values))
       .then((result) => {
         toast.log("Registration successful!");

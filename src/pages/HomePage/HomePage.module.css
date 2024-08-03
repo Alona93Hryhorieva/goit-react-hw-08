@@ -1,33 +1,5 @@
 .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 250px;
-}
-
-.title {
-  font-size: 58px;
-  line-height: 1.5;
-  background: linear-gradient(90deg, #ff7e5f, #feb47b, #ff7e5f);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  font-weight: 900;
-  background-size: 300% 100%; /* Збільшено розмір фону */
-  animation: gradient-animation 3s linear infinite; /* Оновлено анімацію */
-}
-
-@keyframes gradient-animation {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 100% 50%;
-  }
-}
-
-.div {
-  width: 100%;
+  margin-top: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -35,12 +7,16 @@
   gap: 20px;
 }
 
-.icon {
-  width: 10%;
-  height: auto;
+.title {
+  font-size: 50px;
+  color: rgb(68, 211, 211);
+  font-weight: 900;
+  /* padding: 10px;
+  margin: 20px; */
+  /* box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3); */
 }
 
-.title {
-  color: rgb(0, 229, 255);
-  font-size: 50px;
+.icon {
+  width: 45%;
+  height: auto;
 }

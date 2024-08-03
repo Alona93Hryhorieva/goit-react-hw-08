@@ -44,22 +44,3 @@
   display: flex;
   align-items: center;
 }
-
-@media (prefers-color-scheme: light) {
-  .nav {
-    background-color: #ffffff; /* Світлий фон для навігаційної панелі */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Легка тінь для світлої теми */
-  }
-
-  .link {
-    color: #333; /* Темний колір тексту для світлої теми */
-  }
-
-  .link:hover {
-    color: #007aff; /* Колір при наведенні курсору у світлій темі */
-  }
-
-  .isActive {
-    color: #007aff; /* Колір для активного посилання у світлій темі */
-  }
-}

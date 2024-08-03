@@ -1,0 +1,17 @@
+.header {
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.header:hover {
+  background-color: #131b10;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
