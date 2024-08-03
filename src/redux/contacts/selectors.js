@@ -7,8 +7,8 @@ export const selectSelectedContact = (state) => state.contacts.selectedContact;
 export const selectLoading = (state) => state.contacts.loading;
 export const selectError = (state) => state.contacts.error;
 export const selectModal = (state) => state.contacts.modal;
-export const selectModalIsOpen = (state) => state.contacts.modal.state;
-export const selectModalContactId = (state) => state.modal.contacts.contactId;
+export const selectModalIsOpen = (state) => state.contacts.modal.isOpen;
+export const selectModalContactId = (state) => state.contacts.modal.contactId;
 
 export const selectFilteredContacts = createSelector(
   [selectContacts, selectFilterName, selectFilterNumber],

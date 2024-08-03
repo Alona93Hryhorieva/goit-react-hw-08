@@ -10,9 +10,9 @@ export default function ContactList() {
 
   return (
     <ul className={css.list}>
-      {filteredContacts.map((item) => (
-        <li key={item.id} className={css.item}>
-          <Contact contactFrend={item} />
+      {filteredContacts.map((contact) => (
+        <li key={contact.id} className={css.item}>
+          <Contact contact={contact} />
         </li>
       ))}
       {filteredContacts.length === 0 && filter && (

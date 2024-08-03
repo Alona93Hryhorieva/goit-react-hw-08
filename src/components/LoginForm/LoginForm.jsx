@@ -1,4 +1,3 @@
-
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { useId } from "react";
 import { useDispatch } from "react-redux";
@@ -18,11 +17,10 @@ export default function LoginForm() {
     password: "",
   };
 
-
   const handleSubmit = (values, actions) => {
-    console.log("Submitting values:", values); // Логування даних перед відправкою
+    // console.log("Submitting values:", values); // Логування даних перед відправкою
     dispatch(login(values)).catch((error) => {
-      console.error("Error during login:", error); // Логування помилок
+      // console.error("Error during login:", error); // Логування помилок
     });
     actions.resetForm();
   };
@@ -37,35 +35,36 @@ export default function LoginForm() {
   });
 
   return (
-    <div className={css.containerForm}>
-      <h2 className={css.title}>Будь ласка, увійдіть до системи!</h2>
+    <div className={css.container}>
+      <h2 className={css.title}>Enter your login details</h2>
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
         onSubmit={handleSubmit}
       >
-        <Form className={css.form}>
-          <div className={css.container}>
+        <Form className={css.form} autoComplete="off">
+          <div>
             <label htmlFor={emailId} className={css.label}>
-              Електронна пошта:
+              Email:
             </label>
             <Field
               type="email"
-              className={css.input}
-              id={emailId}
               name="email"
+              id={emailId}
+              className={css.input}
+              placeholder="TomHardy@gmail.com"
             />
             <ErrorMessage className={css.error} component="span" name="email" />
           </div>
-          <div className={css.container}>
+          <div>
             <label htmlFor={passwordId} className={css.label}>
-              Пароль:
+              Password:
             </label>
             <Field
               type="password"
-              className={css.input}
-              id={passwordId}
               name="password"
+              id={passwordId}
+              className={css.input}
             />
             <ErrorMessage
               className={css.error}
@@ -74,9 +73,7 @@ export default function LoginForm() {
             />
           </div>
           <div className={css.containerBtn}>
-            <button type="submit" >
-              Увійти
-            </button>
+            <button type="submit">Sign in</button>
           </div>
         </Form>
       </Formik>

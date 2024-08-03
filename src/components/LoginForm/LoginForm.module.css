@@ -1,68 +1,59 @@
-.containerForm {
+.container {
+  align-items: center;
+  justify-content: center;
+  text-align: left;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  background-color: #1e1e1e; /* Темний фон для контейнера */
-  padding: 30px;
-  border-radius: 10px; /* Узгоджене округлення */
+  gap: 15px;
+  margin-bottom: 16px;
 }
 
 .title {
-  font-size: 2rem; /* Зменшено розмір шрифту */
-  line-height: 1.5;
-  font-weight: 300;
+  font-size: 50px;
+  font-weight: 700;
   color: #242424;
-  margin-bottom: 20px; /* Відступ від заголовка до форми */
-  text-align: center; /* Вирівнювання по центру */
+  text-align: center;
 }
-
 .form {
-  border: 1px solid rgba(255, 255, 255, 0.2); /* Легкий контур */
-  border-radius: 10px; /* Узгоджене округлення */
-  max-width: 600px; /* Узгоджена максимальна ширина */
-  padding: 30px;
-  background-color: #282c34; /* Темний фон форми */
-  color: rgba(255, 255, 255, 0.87); /* Світлий текст */
+  width: 400px;
+  background-color: rgb(118, 148, 93);
+  border: 4px solid rgba(102, 21, 21, 0.87);
+  border-radius: 20px;
+  padding: 15px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
 }
 
 .label {
-  line-height: 1.5;
-  color: rgba(255, 255, 255, 0.7); /* Світло-сірий колір для тексту */
-  font-weight: 500;
-  margin-bottom: 8px; /* Узгоджено з відступами */
-}
-
-.container {
   display: flex;
   flex-direction: column;
-  gap: 12px; /* Узгоджено відступи */
-  margin-bottom: 16px; /* Узгоджено відступи між полями та кнопкою */
+  line-height: 1.5;
+  font-weight: 700;
+  margin-bottom: 5px;
+  margin-left: 10px;
 }
 
 .input {
-  width: 100%; /* Зроблено ширину адаптивною */
+  width: 100%;
+  font-size: 20px;
   padding: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.3); /* Легкий контур */
-  border-radius: 8px; /* Узгоджене округлення */
-  background-color: #333; /* Темний фон полів */
-  color: rgba(255, 255, 255, 0.87); /* Світлий текст */
-  font-size: 1em;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.87);
+  margin-bottom: 15px;
 }
 
 .input:focus {
-  border-color: #007aff; /* Колір контуру при фокусі */
-  outline: none; /* Вимкнено стандартний обведення */
+  border-color: #c92951;
+  outline: none;
 }
 
 .error {
-  color: #ff4d4d; /* Червоний колір для помилок */
-  font-size: 0.875rem; /* Зменшено розмір шрифту для помилок */
+  color: #ff4d4d;
+  font-size: 20px;
+  font-weight: bold;
   line-height: 1.5;
 }
-
 .containerBtn {
   display: flex;
   justify-content: center;
-  align-items: center;
-  margin-top: 20px; /* Узгоджено відступи */
 }

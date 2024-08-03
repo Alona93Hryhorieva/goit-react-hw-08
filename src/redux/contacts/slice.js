@@ -12,7 +12,7 @@ const initialState = {
   loading: false,
   error: null,
   selectedContact: null,
-  modal: { state: false, contactId: null },
+  modal: { isOpen: false, contactId: null },
 };
 
 const updateContactInState = (state, action) => {
@@ -25,13 +25,26 @@ const updateContactInState = (state, action) => {
   }
 };
 
+// const removeContactFromState = (state, action) => {
+//   state.loading = false;
+//   const index = state.items.findIndex(
+//     (contact) => contact.id === action.payload.id
+//   );
+//   if (index !== -1) {
+//     state.items.splice(index, 1);
+//   }
+// };
 const removeContactFromState = (state, action) => {
+  console.log("removeContactFromState called", action.payload);
   state.loading = false;
   const index = state.items.findIndex(
     (contact) => contact.id === action.payload.id
   );
   if (index !== -1) {
     state.items.splice(index, 1);
+    console.log("Contact removed", state.items);
+  } else {
+    console.log("Contact not found");
   }
 };
 
@@ -40,18 +53,17 @@ const contactsSlice = createSlice({
   initialState,
   reducers: {
     setSelectedContact: (state, action) => {
-      state.contacts.selectedContact = action.payload;
+      state.selectedContact = action.payload;
     },
     openModal: (state, action) => {
-      state.contacts.modal.state = true;
-      state.contacts.modal.contactId = action.payload;
+      state.modal.isOpen = true;
+      state.modal.contactId = action.payload;
     },
     closeModal: (state) => {
-      state.contacts.modal.state = false;
-      state.contacts.modal.contactId = null;
+      state.modal.isOpen = false;
+      state.modal.contactId = null;
     },
   },
-
   extraReducers: (builder) => {
     builder
       .addCase(fetchContacts.pending, (state) => {
@@ -85,6 +97,10 @@ const contactsSlice = createSlice({
         state.error = null;
       })
       .addCase(deleteContact.fulfilled, removeContactFromState)
+      .addCase(deleteContact.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload;
+      })
       .addCase(editingContact.pending, (state) => {
         state.loading = true;
         state.error = null;

@@ -1,6 +1,7 @@
 .containerList {
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 .container {
@@ -8,7 +9,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
+
   flex-direction: row;
   gap: 100px;
   margin: 0 auto;
