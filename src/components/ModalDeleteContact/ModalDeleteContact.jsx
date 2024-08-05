@@ -16,7 +16,7 @@ export default function ModalDeleteContact() {
 
   const handleConfirm = () => {
     dispatch(deleteContact(contactId));
-    toast.success("Successfully deleted!");
+    // toast.success("Successfully deleted!");
   };
   return (
     <>
