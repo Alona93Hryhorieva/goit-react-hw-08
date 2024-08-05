@@ -4,10 +4,11 @@ import toast from "react-hot-toast";
 import { closeModal } from "../../redux/contacts/slice";
 import { deleteContact } from "../../redux/contacts/operations";
 import css from "./ModalDeleteContact.module.css";
+import { selectModal } from "../../redux/contacts/selectors";
 
 export default function ModalDeleteContact() {
   const dispatch = useDispatch();
-  const { state, contactId } = useSelector((state) => state.modal);
+  const { contactId } = useSelector(selectModal);
 
   const handleClose = () => {
     dispatch(closeModal());
@@ -15,18 +16,17 @@ export default function ModalDeleteContact() {
 
   const handleConfirm = () => {
     dispatch(deleteContact(contactId));
-    dispatch(closeModal());
     toast.success("Successfully deleted!");
   };
   return (
     <>
-      <div open={state} onClose={handleClose} className={css.wrapper}>
+      <div onClose={handleClose} className={css.container}>
         <button className={css.closeBtn} onClick={handleClose}>
           <RxCross2 />
         </button>
         <h2 className={css.title}>Are you sure about that?</h2>
-        <Button onClick={handleClose}>Cancel</Button>
-        <Button onClick={handleConfirm}>Delete</Button>
+        <button onClick={handleClose}>Cancel</button>
+        <button onClick={handleConfirm}>Delete</button>
       </div>
     </>
   );

@@ -26,7 +26,7 @@ export default function ContactsPage() {
 
   return (
     <>
-      {modal.state && <ModalDeleteContact />}
+      {modal.isOpen && <ModalDeleteContact />}
       <div className={css.containerList}>
         <h2 className={css.title}>Phone book</h2>
         <div className={css.container}>

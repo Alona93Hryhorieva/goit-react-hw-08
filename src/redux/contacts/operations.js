@@ -27,24 +27,13 @@ export const addContact = createAsyncThunk(
   }
 );
 
-// export const deleteContact = createAsyncThunk(
-//   "contacts/deleteContact",
-//   async (contactId, { rejectWithValue }) => {
-//     try {
-//       const response = await axios.delete(`/api/contacts/${contactId}`);
-//       return { id: contactId }; // Повертаємо об'єкт з id видаленого контакту
-//     } catch (error) {
-//       return rejectWithValue(error.response.data);
-//     }
-//   }
-// );
 export const deleteContact = createAsyncThunk(
   "contacts/deleteContact",
   async (contactId, thunkAPI) => {
     try {
-      const responce = await axios.delete(`/contacts/${contactId}`);
+      const response = await axios.delete(`/contacts/${contactId}`);
       toast.success("The contact was successfully deleted!");
-      return responce.data;
+      return response.data;
     } catch (error) {
       toast.error("Failed to delete contact. Please try again!");
       return thunkAPI.rejectWithValue(error.message);
