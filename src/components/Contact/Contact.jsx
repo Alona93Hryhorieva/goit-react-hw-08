@@ -1,58 +1,25 @@
-// import { FaPhoneAlt } from "react-icons/fa";
-// import { FaUser } from "react-icons/fa";
-// import { useDispatch } from "react-redux";
-// import { openModal } from "../../redux/contacts/slice";
-// import { editingContact } from "../../redux/contacts/operations";
-// import css from "./Contact.module.css";
-
-// export default function Contact({ contact }) {
-//   const dispatch = useDispatch();
-
-//   const handleOpenModal = () => {
-//     dispatch(openModal(contact.id));
-//   };
-
-//   const handleEditing = () => {
-//     dispatch(editingContact({ contactId, updatedData }));
-//   };
-
-//   return (
-//     <>
-//       <div>
-//         <p className={css.text}>
-//           <FaUser />
-//           {contact.name}
-//         </p>
-//         <p className={css.text}>
-//           <FaPhoneAlt /> {contact.number}
-//         </p>
-//       </div>
-//       <div className={css.containerBtn}>
-//         <button type="button" onClick={handleOpenModal}>
-//           Delete
-//         </button>
-//         <button type="button" onClick={handleEditing}>
-//           Editing
-//         </button>
-//       </div>
-//     </>
-//   );
-// }
-
 import { FaPhoneAlt, FaUser } from "react-icons/fa";
-import { useDispatch } from "react-redux";
-import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useState, useEffect } from "react";
 import { openModal } from "../../redux/contacts/slice";
 import { editingContact } from "../../redux/contacts/operations";
 import css from "./Contact.module.css";
 
 export default function Contact({ contact }) {
   const dispatch = useDispatch();
+  const loading = useSelector((state) => state.contacts.loading);
   const [isEditing, setIsEditing] = useState(false);
   const [updatedData, setUpdatedData] = useState({
     name: contact.name,
     number: contact.number,
   });
+
+  useEffect(() => {
+    setUpdatedData({
+      name: contact.name,
+      number: contact.number,
+    });
+  }, [contact]);
 
   const handleOpenModal = () => {
     dispatch(openModal(contact.id));
@@ -74,6 +41,10 @@ export default function Contact({ contact }) {
   const toggleEditing = () => {
     setIsEditing(!isEditing);
   };
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <>

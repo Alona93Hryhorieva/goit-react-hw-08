@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { useId } from "react";
 import css from "./ContactForm.module.css";
 import { addContact } from "../../redux/contacts/operations";
-import toast from "react-hot-toast";
+// import toast from "react-hot-toast";
 
 export default function ContactForm() {
   const dispatch = useDispatch();
@@ -39,7 +39,7 @@ export default function ContactForm() {
         number: values.number,
       })
     );
-    toast.success("Successfully created!");
+    // toast.success("Successfully created!");
   };
 
   return (
